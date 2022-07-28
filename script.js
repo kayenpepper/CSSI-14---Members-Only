@@ -13,6 +13,17 @@
 // });
 
 /* Your Code Here */
+const keysPressed = [];
+const passwordKey = "what";
 window.addEventListener("keypress", (e) => {
-  console.log(e.key);
-})
+  // add key pressed into keysPressed array
+  keysPressed.push(e.key);
+  // console.log(keysPressed);
+  //check for password
+  let passwordAttempt = keysPressed.slice(-passwordKey.length);
+  // console.log(passwordAttempt);
+  let passwordAttemptString = passwordAttempt.join("");
+  if (passwordAttemptString.toLowerCase() === passwordKey){
+    console.log("password submitted");
+  }
+});
